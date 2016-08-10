@@ -1,7 +1,7 @@
 # gulp-riot
 
 ## Description
-This repository is template to compile riot.js and post css with gulp.
+This repository is the template to compile riot.js and post css with gulp.
 
 
 ## Requirement
