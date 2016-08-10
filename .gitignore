@@ -1,0 +1,14 @@
+
+.DS_STORE
+.idea/*
+
+# npm
+npm-debug.log
+node_modules
+
+# compile destination
+app/**/*
+
+# nightwatch e2e
+test/reports/*
+selenium-debug.log
