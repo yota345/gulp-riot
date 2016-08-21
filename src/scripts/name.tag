@@ -1,3 +1,3 @@
 <name>
-  <h1>{ opts.last }, { opts.first }</h1>
+  <h1>{ opts.first }, { opts.last }</h1>
 </name>
