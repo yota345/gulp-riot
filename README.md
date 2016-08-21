@@ -16,17 +16,12 @@ Install npm packages
 npm install
 ```
 
-Compile and watch riot.js and post css.
-```
-npm start
-```
-
-Just compile.
+Compile.
 ```
 gulp
 ```
 
-Just watch.
+Watch.
 ```
 gulp watch
 ```
