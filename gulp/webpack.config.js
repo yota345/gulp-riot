@@ -1,5 +1,5 @@
 var webpack = require("webpack");
-var config = require('./config');
+var config  = require('./config');
 
 
 module.exports = {
@@ -8,20 +8,18 @@ module.exports = {
     appPath: config.javascript.dest,
     filename: '[name].bundle.js'
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      riot: 'riot'
+    })
+  ],
   module: {
     preLoaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
-      },
       {
         test: /\.tag$/,
         exclude: /node_modules/,
         loader: 'riotjs-loader',
-        query: {
-          type: 'babel'
-        }
+        query: { type: 'none' }
       }
     ],
     loaders: [
@@ -33,11 +31,6 @@ module.exports = {
     ]
   },
   resolve: {
-      extensions: ['', '.js', '.tag']
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      riot: 'riot'
-    })
-  ]
+    extensions: ['', '.js', '.tag']
+  }
 };

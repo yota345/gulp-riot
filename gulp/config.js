@@ -7,10 +7,13 @@ module.exports = {
     srcPath: srcPath,
     appPath: appPath,
 
-    
     html: {
         src:  srcPath + '/index.html',
         dest: appPath
+    },
+    img: {
+        src:  srcPath + '/img/*',
+        dest: appPath + '/img'
     },
     javascript: {
         src:  srcPath + '/scripts/**/*',
@@ -24,6 +27,7 @@ module.exports = {
     watch: {
         srcScripts:  srcPath + '/scripts/**/*',
         srcPost:     srcPath + '/styles/**/*.css',
+        srcImg:      srcPath + '/img/**/*',
         browserSync: 'app/**/*'
     },
     rev: {

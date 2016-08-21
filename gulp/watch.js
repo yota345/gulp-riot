@@ -13,10 +13,11 @@ gulp.task('watch', function() {
     });
 
 
-    gulp.watch(config.watch.srcCss, function() {
+    gulp.watch(config.watch.srcPost, function() {
         runSequence(
             'clean:styles',
-            ['compile-html', 'compile-postcss'], 
+            'compile-html',
+            'compile-postcss',
             'rev_replace'
         );
     });
@@ -24,9 +25,19 @@ gulp.task('watch', function() {
 
     gulp.watch(config.watch.srcScripts, function() {
         runSequence(
-            ['clean:scripts', 'lint'],
-            ['compile-html', 'webpack'],
+            'lint',
+            'clean:scripts',
+            'compile-html',
+            'webpack',
             'rev_replace'
+        );
+    });
+
+
+    gulp.watch(config.watch.srcImg, function() {
+        runSequence(
+            'clean:img',
+            'compile-img'
         );
     });
 

@@ -9,7 +9,7 @@ var nested       = require('postcss-nested');
 var cssnext      = require("gulp-cssnext");
 var simpleVars   = require("postcss-simple-vars");
 var mixin        = require('postcss-mixins');
-var notify       = require('gulp-notify');
+var postCssImport     = require('postcss-import')
 var customProperties  = require("postcss-custom-properties");
 var customMedia       = require("postcss-custom-media");
 var colorRgbaFallback = require("postcss-color-rgba-fallback");
@@ -18,6 +18,7 @@ var pixrem            = require('pixrem');
 
 gulp.task('compile-postcss', function () {
     var processors = [
+        postCssImport,
         autoprefixer({browsers: ['last 2 versions', '> 2%']}),
         cssnano(),
         nested,
@@ -40,6 +41,5 @@ gulp.task('compile-postcss', function () {
         .pipe(gulp.dest(config.stylesheet.dest))
         .pipe(rev.manifest(config.rev.dest, config.rev.opts))
         .pipe(gulp.dest(config.appPath))
-        .pipe(notify('Finished compiling post-css'));
 
 });

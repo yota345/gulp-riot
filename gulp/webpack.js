@@ -4,7 +4,6 @@ var webpack       = require('gulp-webpack');
 var webpackConfig = require('./webpack.config.js');
 var rev           = require('gulp-rev');
 var uglify        = require('gulp-uglify');
-var notify        = require('gulp-notify');
 
 
 gulp.task('webpack', function() {
@@ -15,5 +14,4 @@ gulp.task('webpack', function() {
         .pipe(gulp.dest(webpackConfig.output.appPath))
         .pipe(rev.manifest(config.rev.dest, config.rev.opts))
         .pipe(gulp.dest(config.appPath))
-        .pipe(notify('Finished compiling webpack'));
 });

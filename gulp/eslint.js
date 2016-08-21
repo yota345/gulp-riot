@@ -3,7 +3,6 @@ var gulp     = require('gulp');
 var eslint   = require('gulp-eslint');
 var plumber  = require('gulp-plumber');
 var notifier = require('node-notifier');
-var notify   = require('gulp-notify');
 
 
 gulp.task('lint',function(){
@@ -21,9 +20,8 @@ gulp.task('lint',function(){
                 });
             }
         }))
-        .pipe(eslint({ useEslintrc: true }))
+        .pipe(eslint({ useEslintrc: true, fix: true }))
         .pipe(eslint.format())
         .pipe(eslint.failOnError())
-        .pipe(notify('Finished eslint'))
         .pipe(plumber.stop());
 });

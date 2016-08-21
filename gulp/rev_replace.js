@@ -9,5 +9,5 @@ gulp.task('rev_replace', function(){
     return gulp.src(config.revReplace.src)
         .pipe(revReplace({manifest: manifest}))
         .pipe(gulp.dest(config.revReplace.dest))
-        .pipe(notify('Finished rev replace.'));
+        .pipe(notify('Finished compile.'));
 });
